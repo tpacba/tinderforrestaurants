@@ -1,0 +1,19 @@
+// create a branch
+    git checkout -b my-branch
+
+// go back to specific branch
+    git checkout my-branch
+
+// go master branch
+    git checkout master
+
+// push my-branch
+    git push origin my-branch
+
+// delete branch locally
+    git branch -d localBranchName
+
+// delete branch remotely
+    git push origin --delete
+
+    cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json
