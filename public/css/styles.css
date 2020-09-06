@@ -21,7 +21,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 6%;
 
     background: url(./assets/logo.png);
 }
@@ -68,7 +68,7 @@ body {
 
 
 
-.login-button {
+.login-button, .startgroup-button{
     text-decoration: none;
 
     background: #C5443C;
@@ -88,7 +88,11 @@ body {
     align-items: center;
 }
 
-.login-button .label {
+.login-button, .startgroup-button:hover {
+    text-decoration: none;
+}
+
+.login-button .label, .startgroup-button .label {
     font-family: Gothic A1,  sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -102,7 +106,7 @@ body {
     color: #FFFFFF;
 }
 
-.signup-button {
+.signup-button, .joingroup-button{
     text-decoration: none;
 
     width: 178px;
@@ -122,7 +126,11 @@ body {
     align-items: center;
 }
 
-.signup-button .label {
+.signup-button, .joingroup-button:hover{
+    text-decoration: none;
+}
+
+.signup-button .label,  .joingroup-button .label{
     font-family: Gothic A1,  sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -130,4 +138,59 @@ body {
     line-height: 30px;
 
     color: #C5443C;
+}
+
+.heading, .login, .signup, .footer, .welcome-name{
+    font-family: Gothic A1,  sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+    letter-spacing: -0.05em;
+}
+
+.login-form, .signup-form{
+    /* border: 10px solid   #FFFFFF;
+    box-sizing: border-box;  */
+    margin-top: 3%;
+
+    display: block;
+    width: 480px
+}
+
+
+@media screen and (max-width: 600px) {
+    .logo {
+        margin-top: 10%;
+    }
+    .container {
+        width: 80%
+    }
+
+    .login-form, .signup-form{
+        margin-top:7%;
+    }
+}
+footer {
+    font-family: Gothic A1, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+
+    display: block;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.05em;
+
+    margin-top: 150px;
+}
+
+.welcome-name {
+    display: block;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 75px;
+    margin-bottom: 40px
 }
