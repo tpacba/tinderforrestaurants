@@ -131,3 +131,15 @@ body {
 
     color: #C5443C;
 }
+
+.heading, .login, .signup, .footer {
+    font-family: Gothic A1,  sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+    letter-spacing: -0.05em;
+}
+
+.col-md-6{
+    border: 10px solid   #FFFFFF;
+    box-sizing: border-box; 
+}
