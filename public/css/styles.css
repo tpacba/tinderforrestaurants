@@ -21,7 +21,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 6%;
 
     background: url(./assets/logo.png);
 }
@@ -139,7 +139,20 @@ body {
     letter-spacing: -0.05em;
 }
 
-.col-md-6{
+.container{
     border: 10px solid   #FFFFFF;
     box-sizing: border-box; 
+    margin-top:10%;
+
+    display: block;
+    width: 480px
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        margin-top: 10%;
+    }
+    .container {
+        width: 80%
+    }
 }
