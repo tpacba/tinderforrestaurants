@@ -22,17 +22,17 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
     }
 
-
   });
-  
+  // Assosiating user with Group
   Group.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
+    
+  //We are saying that a group should belong to a user
     Group.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+        foreignKey: {
+          allowNull: false
+        }
+      });
+
   };
 
   return Group;
