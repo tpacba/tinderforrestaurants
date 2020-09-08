@@ -26,7 +26,7 @@ body {
     background: url(./assets/logo.png);
 }
 
-.title{
+.title {
     font-family: Gothic A1,  sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -195,6 +195,30 @@ footer {
     margin-bottom: 40px
 }
 
+.restaurantCard {
+    margin: 0px auto 0px auto;
+}
+
+#matchTitle {
+    text-align: center;
+    color: white;
+    font-size: 55px;
+}
+
+@media screen and (max-width: 760px) {
+    .restaurantCard {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .restaurantCard {
+        display: block;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+
 .choose {
     margin-top: 30px;
     background: url(./assets/Ellipse.png);
@@ -243,4 +267,3 @@ line-height: 25px;
         width: 264px;
     }
 }
-
