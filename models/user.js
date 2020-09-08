@@ -31,5 +31,15 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+
+  User.associate = function(models) {
+    // Associating user with groups
+    // When a user is deleted, also delete any associated Groups
+    User.hasMany(models.Group, {
+      onDelete: "cascade"
+    });
+  };
+
   return User;
+
 };

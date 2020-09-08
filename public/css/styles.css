@@ -147,7 +147,7 @@ body {
     letter-spacing: -0.05em;
 }
 
-.login-form, .signup-form{
+.login-form, .signup-form, .creategroup-form{
     /* border: 10px solid   #FFFFFF;
     box-sizing: border-box;  */
     margin-top: 3%;
@@ -165,7 +165,7 @@ body {
         width: 80%
     }
 
-    .login-form, .signup-form{
+    .login-form, .signup-form, .creategroup-form{
         margin-top:7%;
     }
 }
@@ -216,5 +216,54 @@ footer {
         display: block;
         margin-right: 20px;
         margin-left: 20px;
+    }
+}
+
+.choose {
+    margin-top: 30px;
+    background: url(./assets/Ellipse.png);
+    background-position: center;
+}
+
+.choose-heading {
+    font-family: Gothic A1;
+font-style: normal;
+font-weight: 800;
+font-size: 36px;
+line-height: 70px;
+color: #FFFFFF;
+letter-spacing: -0.05em;
+}
+
+.card {
+    width:364px;
+}
+
+.restaurant-name {
+    font-family: Gothic A1;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 45px;
+}
+
+.rating, .price, .category {
+    font-family: Gothic A1;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 25px;
+}
+
+.marks {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+        width: 264px;
     }
 }

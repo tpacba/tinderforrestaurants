@@ -1,5 +1,5 @@
-CREATE DATABASE restaurant_select;
-USE restaurant_select;
+CREATE DATABASE restaurant_db;
+USE restaurant_db;
 
 CREATE TABLE `restaurants` (
   `id` Int( 11 ) AUTO_INCREMENT NOT NULL,
