@@ -26,7 +26,7 @@ body {
     background: url(./assets/logo.png);
 }
 
-.title{
+.title {
     font-family: Gothic A1,  sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -193,4 +193,36 @@ footer {
 
     margin-top: 75px;
     margin-bottom: 40px
+}
+
+.card {
+    margin: 0px auto 0px auto;
+}
+
+.card-deck {
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+#matchTitle {
+    text-align: center;
+    color: white;
+    font-size: 55px;
+}
+
+@media screen and (max-width: 760px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .card {
+        display: block;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .row{
+        width: 100%;
+    }
 }
