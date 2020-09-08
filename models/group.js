@@ -5,7 +5,6 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
       validate: {
         isEmail: true
       }
@@ -20,7 +19,18 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
         len: [1]
+    },
+
+    price: {
+      type: DataTypes.STRING,
+        allowNull: true,
+        len: [1]
+    },
+    code: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
+
 
   });
   // Assosiating user with Group
@@ -32,6 +42,11 @@ module.exports = function(sequelize, DataTypes) {
           allowNull: false
         }
       });
+
+        Group.hasMany(models.Results, {
+          onDelete: "cascade"
+        });
+      
 
   };
 
