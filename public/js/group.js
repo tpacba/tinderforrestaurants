@@ -14,60 +14,32 @@ const categorySearch = $(".category-search")
 
 // let categoryVal = categorySearch.val();
 
+
+
+
+createGroup.on("click", event => {
+event.preventDefault();
+event.stopPropagation();
 const groupData = {
     city: citySearch.val().trim(),
-    categorySearch: categorySearch.val().trim(),
+    category: categorySearch.val().trim(),
     price: priceSearch.val().trim(),
+    code: ~~(Math.random()*9000) + 1000
 }
-
-
-createGroup.on("submit", event => {
-event.preventDefault();
-
-yelpSearch()
+$.post("/api/group", groupData).then(data=> {
+    alert("worked! redirecting now!")
+    setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+})
 
 console.log(groupData.city)
 
 
+})
 
 })
 
-function yelpSearch() {
-
-
-    var apiKey = "Bearer huZM0jW7oxfJk_QU1FrFl1ZnuU8y3B8yAFAlAn7RKVr8YIRsHqibw2RnwD19sD2vXCCTTOUNJfwV5VMTEPSy7IecJkDUzzHDMj5fWehQ7wN8GSj2VPe_16ZdbCIrX3Yx"
-    
-    // var category = "Pizza";
-        
-    // var city = "San Diego";
-        
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=30&location=" + groupData.city + "&locale=it_IT&categories=" + groupData.categorySearch + "&term=restaurant";
-        
-    // var longitude = "";
-    
-    // var lattitude = "";
-    
-    // var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=10&latitude=" + latitude + "&longitude=" + longitude + "&locale=it_IT&categories=" + category + "&term=restaurant";
-        
    
-        $.ajax({
-            url: queryURL,
-            method: "GET",
-            headers: {
-            'Authorization': apiKey,
-            },
-        })
-        .then(function(response) {
-    
-            console.log(response);
 
-        
-        });
-
-
-}
-
-})
 
 // for (var i = 0; i < 3; i++) {
 

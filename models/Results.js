@@ -25,7 +25,6 @@ module.exports = function(sequelize, DataTypes) {
       
       image: {
         type: DataTypes.STRING,
-        allowNull: false,
         len: [1]
       },
 
@@ -47,6 +46,7 @@ module.exports = function(sequelize, DataTypes) {
       // A Post can't be created without an Author due to the foreign key constraint
       Results.belongsTo(models.Group, {
         foreignKey: {
+          name: "GroupId",
           allowNull: false
         }
       });
