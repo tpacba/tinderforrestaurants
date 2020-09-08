@@ -17,7 +17,7 @@
 <body>
     <div class="logo"></div>
     <div class="container creategroup-form">
-        <h2 class="welcome-name" style="margin-top: 25px;">Join a group</h2>
+        <h2 class="welcome-name" style="margin-top: 10px;">Join a group</h2>
         <form class="creategroup">
             <div class="form-group">
                 <p class="tag">Group ID</p>
@@ -25,6 +25,15 @@
             </div>
             <button type="submit" class="btn btn-default" style="display: block; margin-left: auto; margin-right: auto;">Submit</button>
         </form>
+    </div>
+
+    <!-- Should only be displayed after user enters valid group id -->
+    <!-- Switch to style="display: block"-->
+    <div class="container" style="display: none">
+        <h2 class="welcome-name" style="margin-top: 20px; margin-bottom: 20px;">You joined a group!</h2>
+        <p class="tag"><span class="member-one">John Doe</span></p>
+        <p class="tag"><span class="member-two">Michelle White</span></p>
+        <button type="submit" class="btn btn-default" style="display: block; margin-left: auto; margin-right: auto;">Start</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
