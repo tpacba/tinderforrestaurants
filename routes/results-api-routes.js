@@ -19,6 +19,7 @@ module.exports = function(app) {
         });
       });
 
+      
       app.delete("/api/results/:id", function(req, res) {
         db.Results.destroy({
           where: {
