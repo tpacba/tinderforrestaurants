@@ -5,5 +5,12 @@ $(document).ready(()=> {
     .then(data => {
         //put data in carousel or something...
         console.log(data)
+
+    
+
+
+
+
     })
+
 })
