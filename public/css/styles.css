@@ -195,13 +195,8 @@ footer {
     margin-bottom: 40px
 }
 
-.card {
+.restaurantCard {
     margin: 0px auto 0px auto;
-}
-
-.card-deck {
-    margin-left: 50%;
-    margin-right: 50%;
 }
 
 #matchTitle {
@@ -211,18 +206,15 @@ footer {
 }
 
 @media screen and (max-width: 760px) {
-    .card {
+    .restaurantCard {
         margin-bottom: 20px;
     }
 }
 
 @media screen and (max-width: 991px) {
-    .card {
+    .restaurantCard {
         display: block;
         margin-right: 20px;
         margin-left: 20px;
-    }
-    .row{
-        width: 100%;
     }
 }
