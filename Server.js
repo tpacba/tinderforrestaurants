@@ -26,6 +26,7 @@ app.use(passport.session());
 require("./routes/html-routes")(app);
 require("./routes/login-api-routes.js")(app);
 require("./routes/group-api-routes.js")(app);
+require("./routes/results-api-routes.js")(app);
 
 // require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);

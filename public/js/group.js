@@ -15,8 +15,6 @@ const categorySearch = $(".category-search")
 // let categoryVal = categorySearch.val();
 
 
-
-
 createGroup.on("click", event => {
 event.preventDefault();
 event.stopPropagation();
@@ -35,6 +33,8 @@ console.log(groupData.city)
 
 
 })
+
+
 
 })
 
