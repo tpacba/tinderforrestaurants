@@ -113,6 +113,8 @@ $(document).ready(()=> {
       
     })
     
+    $('.carousel').carousel('pause');
+
     $(document).on("click", "#check-1", function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -128,6 +130,7 @@ $(document).ready(()=> {
         .then(function() {
             //   console.log(match)
         });
+        $('.carousel').carousel('next')
     })
             $(document).on("click", "#ex-1", function(event) {
                 event.preventDefault();
@@ -145,32 +148,24 @@ $(document).ready(()=> {
                     }
                   })
                     .then(function() {
-                      console.log(match)
+                    //   console.log(match)
                     });
     
     
-                // $.put(`api/results/${code}/` + id, function(data) {
-                //     // console.log(data.Results[0].id)
-    
-                // })
+                    $('.carousel').carousel('next')
             })
 
 
 
-    // const code = window.location.href.split("/results/").slice(-1)[0];
-    // $.get(`/api/results/${code}`)
-    // .then(data => {
-    //     //put data in carousel or something...
-    //     console.log(data)
+    
+    // $('.carousel').carousel('pause');
+    // $("#check-1").click(function() {
+    //     $('.carousel').carousel('next')
     // })
-    $('.carousel').carousel('pause');
-    $("#check-1").click(function() {
-        $('.carousel').carousel('next')
-    })
-    $("#ex-1").click(function() {
-        $('.carousel').carousel('next')
-    })
+    // $("#ex-1").click(function() {
+    //     $('.carousel').carousel('next')
+    // })
 
-    console.log("hello")
+    // console.log("hello")
 })
 
