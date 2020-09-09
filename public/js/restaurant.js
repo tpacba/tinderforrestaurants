@@ -152,7 +152,7 @@ $(document).ready(()=> {
     
                 // })
             })
-})
+
 
 
     // const code = window.location.href.split("/results/").slice(-1)[0];
