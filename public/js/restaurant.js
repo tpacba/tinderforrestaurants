@@ -5,6 +5,7 @@ $(document).ready(()=> {
     $.get(`/api/results/${code}`)
     .then(data => {
         //put data in carousel or something...
+        
         console.log(data[0])
         let count = 0;
         let active = "";
@@ -109,7 +110,7 @@ $(document).ready(()=> {
     //         </div>
     //     </div>
     // </div>
-
+      
     })
     
     $(document).on("click", "#check-1", function(event) {
