@@ -30,12 +30,12 @@ module.exports = function(app) {
         });
       });
 
-      app.put("/api/results", function(req, res) {
+      app.put("/api/results/:id", function(req, res) {
         db.Results.update(
           req.body,
           {
             where: {
-              id: req.body.id
+              id: req.params.id
             }
           }).then(function(dbResults) {
           res.json(dbResults);
