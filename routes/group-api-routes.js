@@ -86,14 +86,11 @@ app.delete("/api/group/:id", function (req, res) {
   });
 });
 
-app.get("/api/results/:code", ({params:{code}}, res)=>{
+app.get("/api/results/:code", ({params:{code}}, res) => {
     db.Group.findOne({where:{code}, include: db.Results})
-    .then(({dataValues:results}) => res.json(results))
+    .then(({dataValues:results}) => res.json(results.Results.splice(0,10)))
 })
 
 
 }
-
-
-
 
