@@ -91,26 +91,10 @@ $(document).ready(()=> {
         // })
 
         
-
-
-      
-    //     <div class="carousel-item">
-    //     <div class="container" style="width: fit-content;">
-    //         <div class="card">
-    //             <img id="restaurant-1-image" src="./css/assets/mcdonalds.jpg" class="card-img-top">
-    //             <div class="card-body">
-    //                 <p class="restaurant-name"><span id="restaurant-1-name">Burger King</span></p>
-    //                 <p class="rating"><span id="restaurant-1-stars">3.2 Stars</span>(<span
-    //                         id="restaurant-1-reviews"></span>
-    //                     Reviews)</p>
-    //                 <p class="price"><span id="restaurant-1-price">$</span></p>
-    //                 <p class="category"><span id="restaurant-1-category">Burgers, Fast Food</span></p>
-    //             </div>
-    //         </div>
-    //     </div>
-    // </div>
     })
     
+    $('.carousel').carousel('pause');
+
     $(document).on("click", "#check-1", function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -126,6 +110,7 @@ $(document).ready(()=> {
         .then(function() {
             //   console.log(match)
         });
+        $('.carousel').carousel('next')
     })
             $(document).on("click", "#ex-1", function(event) {
                 event.preventDefault();
@@ -143,32 +128,24 @@ $(document).ready(()=> {
                     }
                   })
                     .then(function() {
-                      console.log(match)
+                    //   console.log(match)
                     });
     
     
-                // $.put(`api/results/${code}/` + id, function(data) {
-                //     // console.log(data.Results[0].id)
-    
-                // })
+                    $('.carousel').carousel('next')
             })
 
 
 
-    // const code = window.location.href.split("/results/").slice(-1)[0];
-    // $.get(`/api/results/${code}`)
-    // .then(data => {
-    //     //put data in carousel or something...
-    //     console.log(data)
+    
+    // $('.carousel').carousel('pause');
+    // $("#check-1").click(function() {
+    //     $('.carousel').carousel('next')
     // })
-    $('.carousel').carousel('pause');
-    $("#check-1").click(function() {
-        $('.carousel').carousel('next')
-    })
-    $("#ex-1").click(function() {
-        $('.carousel').carousel('next')
-    })
+    // $("#ex-1").click(function() {
+    //     $('.carousel').carousel('next')
+    // })
 
-    console.log("hello")
+    // console.log("hello")
 })
 
