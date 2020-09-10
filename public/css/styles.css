@@ -5,8 +5,8 @@ body {
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+    height: 110vh;
+    width: 99vw;
     background: linear-gradient(180deg, #c5443c 0%, #ff8642 100%);
 }
 
@@ -237,6 +237,8 @@ letter-spacing: -0.05em;
 
 .card {
     width:364px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .restaurant-name {
@@ -264,7 +266,19 @@ line-height: 25px;
 
 @media screen and (max-width: 500px) {
     .card {
-        width: 264px;
+        width: 304px;
     }
 }
 
+#restaurant-1-image {
+    width: 362x; /* width of container */
+    height: 362px; /* height of container */
+    object-fit: cover;
+}
+
+@media screen and (max-width: 500px) {
+    #restaurant-1-image {
+        width: 302px;
+        height: 302px;
+    }
+}
