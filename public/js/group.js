@@ -20,22 +20,24 @@ const populateCode = $(".member-one");
 
 
 createGroup.on("click", event => {
-event.preventDefault();
-event.stopPropagation();
-const groupData = {
-    city: citySearch.val().trim(),
-    category: categorySearch.val().trim(),
-    price: priceSearch.val().trim(),
-    code: ~~(Math.random()*9000) + 1000
-}
-$.post("/api/group", groupData).then(data=> {
-    console.log(data.price)
-    alert("worked! redirecting now! Your group code is " + `${data.code}`)
-    populateCode.text(`${data.code}`)
-    setTimeout(()=> window.location.replace(`/results/${data.code}`), 3000)
-})
+    event.preventDefault();
+    event.stopPropagation();
+    const groupData = {
+        city: citySearch.val().trim(),
+        category: categorySearch.val().trim(),
+        price: priceSearch.val().trim(),
+        code: ~~(Math.random()*9000) + 1000
+    }
 
-console.log(groupData.city)
+    $.post("/api/group", groupData).then(data=> {
+        console.log(data.price)
+        alert("worked! redirecting now! Your group code is " + `${data.code}`)
+        populateCode.text(`${data.code}`)
+        $("start-button").click(()=> window.location.replace(`/results/${data.code}`));
+        // setTimeout(()=> window.location.replace(`/results/${data.code}`), 3000)
+    })
+
+    console.log(groupData.city, groupData.code)
 
 
 })
@@ -52,9 +54,7 @@ joinGroup.on("click", function(event) {
 
     $.post("/api/group", groupCode).then(data=> {
         alert("worked! redirecting now!")
-
-        $("start-button").click(()=> window.location.replace(`/results/${data.code}`));
-        // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+        setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
     })
 
 })
