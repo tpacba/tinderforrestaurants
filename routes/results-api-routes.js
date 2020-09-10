@@ -42,4 +42,19 @@ module.exports = function(app) {
         });
       });
 
-}
+      //post for rendering narrowed down results - recently added - Nick
+      app.post("api/results/final", function (req, res) {
+
+        db.Results.findAll({
+          //   where: query,
+          where: {
+            matches: true
+          },
+
+            include: [db.Group]
+          }).then(function(dbResults) {
+            res.json(dbResults);
+
+          })
+
+})}
