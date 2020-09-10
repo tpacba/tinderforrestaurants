@@ -2,6 +2,7 @@ $(document).ready(()=> {
     //api calls and dom manipulation happens
 
     const code = window.location.href.split("/results/").slice(-1)[0];
+    console.log(code)
     $.get(`/api/results/${code}`)
     .then(data => {
         //put data in carousel or something...
@@ -151,7 +152,7 @@ $(document).ready(()=> {
                     if (id > 9) {
                         $.get("/api/results").then(data=> {
                             alert("worked! redirecting now! Waiting on other user")
-                            setTimeout(()=> window.location.replace("/finalmatch"), 1000)
+                            setTimeout(()=> window.location.replace("/restaurant2"), 1000)
                             // need to update
 
 
