@@ -149,7 +149,7 @@ $(document).ready(()=> {
                     if (id > 9) {
                         $.get("/api/results").then(data=> {
                             alert("worked! redirecting now! Waiting on other user")
-                            setTimeout(()=> window.location.replace("/restaurant2"), 1000)
+                            setTimeout(()=> window.location.replace("/finalmatch"), 1000)
                             // need to update
 
 

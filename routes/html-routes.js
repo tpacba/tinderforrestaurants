@@ -57,35 +57,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/restaurant2.html"));
   });
 
-  app.get("/restaurant3", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/restaurant3.html"));
+  app.get("/finalmatch", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/finalmatch.html"));
   });
 
-  app.get("/restaurant4", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/restaurant4.html"));
-  });
-
-  app.get("/restaurant5", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/restaurant5.html"));
-  });
-
-  app.get("/restaurant6", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/restaurant6.html"));
-  });
-
-  app.get("/restaurant7", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/restaurant7.html"));
-  });
-
-  app.get("/restaurant8", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/restaurant8.html"));
-  });
-
-  app.get("/restaurant9", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/restaurant9.html"));
-  });
-
-  app.get("/restaurant10", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/restaurant10.html"));
-  });
+  
 };
