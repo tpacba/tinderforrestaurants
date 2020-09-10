@@ -14,6 +14,18 @@ const populateCode = $(".member-one");
 
 // let cityVal = citySearch.val();
 
+function priceOptions() {
+    
+    // if ($("#priceOptions").val() === "1"){
+    //     return "1"
+    // } else if ($("#priceOptions").val() === "2"){
+    //     return "2"
+    // } else if ($("#priceOptions").val() === "3"){
+    //     return "3"
+    // }
+}
+// document.getElementById("priceOptions").value;
+    
 // let priceVal = priceSearch.val();
 
 // let categoryVal = categorySearch.val();
@@ -21,15 +33,14 @@ const populateCode = $(".member-one");
 
 createGroup.on("click", event => {
 
-event.preventDefault();
-event.stopPropagation();
-const groupData = {
-    city: citySearch.val().trim(),
-    category: categorySearch.val().trim(),
-    price: priceSearch.val().trim(),
-    code: ~~(Math.random()*9000) + 1000
-}
-
+    event.preventDefault();
+    event.stopPropagation();
+    const groupData = {
+        city: citySearch.val().trim(),
+        category: categorySearch.val().trim(),
+        price: $("#priceOptions").val(),
+        code: ~~(Math.random()*9000) + 1000
+    }
 
 
     $.post("/api/group", groupData).then(data=> {
@@ -38,6 +49,7 @@ const groupData = {
         populateCode.text(`${data.code}`)
 
         $("#create-group-code").css("display", "block");
+
         $("#start-button").click(()=> window.location.replace(`/results/${data.code}`));
         // setTimeout(()=> window.location.replace(`/results/${data.code}`), 3000)
     })
