@@ -1,63 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">  
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="./css/assets/favicon.png">
 
 </head>
-<body class="choose">
+
+<body class="choose" style=" background-position-y: top;">
     <div class="logo"></div>
-    <h2 id="matchTitle" style="margin-top: 30px;">Here are your group's match results:</h2>
-        <div class="container">
-            <div class="row" style="width: fit-content; margin-left: auto; margin-right: auto;">
-                <h2 class="choose-heading">choose</h2>
-            </div>
-            <div class="row">
-                <div class="col-6" style="display: block; margin-left: auto; margin-right: auto;">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <!-- Append chosen items as a card here -->
-                        </div>
+    <h2 id="matchTitle" style="margin-top: 30px;">Choose from your group's matches:</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6" style="display: block; margin-left: auto; margin-right: auto;">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Append chosen items as a card here -->
                     </div>
                 </div>
             </div>
         </div>
-        
+    </div>
 
-        <script type="text/javascript" src="/js/restaurant2.js">
-        
-    // $(".carousel-inner").append(` <div class="carousel-item ${active}">
-    //                 <div class="container" style="width: fit-content;">
-    //                     <div class="card">
-    //                         <img id="restaurant-1-image" src="${rest.image}" class="card-img-top">
-    //                         <div class="card-body">
-    //                             <p class="restaurant-name"><span id="restaurant-1-name">${rest.restaurant}</span></p>
-    //                             <p class="price"><span id="restaurant-1-price">${rest.price}</span></p>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-                
-                
-    //             <div class="row">
-    //         <div class="col-6">
-    //             <a href="#" id="check-1" data-id="${rest.id}"><img class="marks" src="/css/assets/exmark.png"></a>
-    //         </div>
-    //         <div class="col-6">
-    //             <a href="#" id="ex-1" data-id="${rest.id}"><img class="marks" src="/css/assets/checkmark.png"></a>
-    //         </div>
-    //     </div>
-    //     </div>`);
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/restaurant2.js">
     </script>
-    
+
 </body>
 
 </html>
-

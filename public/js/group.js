@@ -52,7 +52,9 @@ joinGroup.on("click", function(event) {
 
     $.post("/api/group", groupCode).then(data=> {
         alert("worked! redirecting now!")
-        setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+
+        $("start-button").click(()=> window.location.replace(`/results/${data.code}`));
+        // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
     })
 
 })
