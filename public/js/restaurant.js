@@ -39,73 +39,6 @@ $(document).ready(()=> {
         );
             count++
         })
-
-        // data.forEach(rest => {
-        //     console.log(rest.image)
-        //     const $carouselInner = $(".carousel-inner");
-            // const $carouselItem = $("<div>");
-            // const $carouselContainer = $("<div>");
-            // const $cardContainer = $("<card>");
-            // const $img = $("<img>");
-            // const $cardBody = $("<div>");
-            // const $restaurantName = $("<p>");
-            // const $price = $("<p>");
-            // // const $category = $("<p>")
-            // $carouselItem.addClass("carousel-item");
-            // $img.attr("src", rest.image);
-            // $restaurantName.append(rest.restaurant);
-            // $price.append(rest.price)
-
-            // $carouselItem.append($carouselContainer);
-            // $carouselContainer.append($cardContainer);
-            // $cardContainer.append($img);
-            // $cardBody.append($restaurantName);
-            // $cardBody.append($price);
-            // $carouselInner.append($carouselItem);
-            // const $carouselItem = $("<div class='carouselitem'>")
-            
-            // const $carouselItem = "`<div class='carousel-item'>"
-            // const $carouselContainer = "<div class='container' style='width: fit-content;>"
-            // const $cardContainer = "<div class='card'>"
-            // const $img = "<img id='restaurant-1-image' src='${rest.image}' class='card-img-top'>"
-            // const $cardBody = "<div class='card-body'>"
-            // const $restaurantName = "<p class='restaurant-name'><span id='restaurant-1-name'>${rest.restaurant}/span></p>"
-            // const $price = "<p class='price'><span id='restaurant-1-price'>${rest.price}</span></p>"
-            // const $div = "</div>" + "</div>" + "</div>" + "</div>`"
-
-            // $(".carousel-inner").append($carouselItem, $carouselContainer, $cardContainer, $img, $cardBody, $restaurantName, $price, $div)
-
-            //appending Carousel
-            // $(".carousel-inner").append(`
-            //     <div class="container" style="width: fit-content;">
-            //         <div class="card">
-            //             <img id="restaurant-1-image" src="${rest.image}" class="card-img-top">
-            //             <div class="card-body">
-            //                 <p class="restaurant-name"><span id="restaurant-1-name">${rest.restaurant}</span></p>
-            //                 <p class="price"><span id="restaurant-1-price">${rest.price}</span></p>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div>`);
-
-
-        // })
-
-    //     <div class="carousel-item">
-    //     <div class="container" style="width: fit-content;">
-    //         <div class="card">
-    //             <img id="restaurant-1-image" src="./css/assets/mcdonalds.jpg" class="card-img-top">
-    //             <div class="card-body">
-    //                 <p class="restaurant-name"><span id="restaurant-1-name">Burger King</span></p>
-    //                 <p class="rating"><span id="restaurant-1-stars">3.2 Stars</span>(<span
-    //                         id="restaurant-1-reviews"></span>
-    //                     Reviews)</p>
-    //                 <p class="price"><span id="restaurant-1-price">$</span></p>
-    //                 <p class="category"><span id="restaurant-1-category">Burgers, Fast Food</span></p>
-    //             </div>
-    //         </div>
-    //     </div>
-    // </div>
     })
     
     $('.carousel').carousel('pause');
@@ -120,7 +53,7 @@ $(document).ready(()=> {
         $.ajax({
             method: "DELETE",
             url: `/api/results/` + id,
-            
+
         })
         .then(function() {
             console.log("deleted!")
