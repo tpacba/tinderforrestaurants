@@ -32,6 +32,7 @@ function priceOptions() {
 
 
 createGroup.on("click", event => {
+
     event.preventDefault();
     event.stopPropagation();
     const groupData = {
@@ -41,17 +42,19 @@ createGroup.on("click", event => {
         code: ~~(Math.random()*9000) + 1000
     }
 
+
     $.post("/api/group", groupData).then(data=> {
         console.log(data.price)
         alert("worked! redirecting now! Your group code is " + `${data.code}`)
         populateCode.text(`${data.code}`)
+
+        $("#create-group-code").css("display", "block");
+
         $("#start-button").click(()=> window.location.replace(`/results/${data.code}`));
         // setTimeout(()=> window.location.replace(`/results/${data.code}`), 3000)
     })
 
     console.log(groupData.city, groupData.code)
-
-
 })
 
 
@@ -66,6 +69,8 @@ joinGroup.on("click", function(event) {
 
     $.post("/api/group", groupCode).then(data=> {
         alert("worked! redirecting now!")
+
+
         setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
     })
 

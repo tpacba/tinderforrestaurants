@@ -40,8 +40,7 @@ $(document).ready(()=> {
             count++
         })
     })
-    
-    $('.carousel').carousel('pause');
+    .then(() => $('.carousel').carousel('pause'))
 
     $(document).on("click", "#ex-1", function(event) {
         event.preventDefault();
