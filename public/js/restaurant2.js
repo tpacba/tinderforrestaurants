@@ -2,8 +2,6 @@ $(document).ready(() => {
 
     var finalResults = [];
 
-
-
     $.get("/api/finalresults/").then(data => {
 
         console.log(data)
@@ -18,8 +16,8 @@ $(document).ready(() => {
             } else {
                 active = "";
             }
-            $(".carousel-inner").append(`
-                <div class="carousel-item ${active}">
+            $(".carousel-inner").append(
+                `<div class="carousel-item ${active}">
                     <div class="container" style="width: fit-content;">
                         <div class="card">
                             <img id="restaurant-1-image" src="${rest.image}" class="card-img-top">
@@ -41,11 +39,8 @@ $(document).ready(() => {
             );
             count++
         })
-
-
     })
-
-    $('.carousel').carousel('pause');
+    .then(() => $('.carousel').carousel('pause'))
 
     $(document).on("click", "#check-1", function (event) {
         event.preventDefault();
