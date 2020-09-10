@@ -29,6 +29,7 @@ const groupData = {
     code: ~~(Math.random()*9000) + 1000
 }
 $.post("/api/group", groupData).then(data=> {
+    console.log(data.price)
     alert("worked! redirecting now! Your group code is " + `${data.code}`)
     populateCode.text(`${data.code}`)
     setTimeout(()=> window.location.replace(`/results/${data.code}`), 3000)
