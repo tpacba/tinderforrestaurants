@@ -43,7 +43,7 @@ module.exports = function(app) {
       });
 
       //post for rendering narrowed down results - recently added - Nick
-      app.post("api/results/final", function (req, res) {
+      app.get("/api/finalresults/", function (req, res) {
 
         db.Results.findAll({
           //   where: query,
@@ -58,3 +58,4 @@ module.exports = function(app) {
           })
 
 })}
+
