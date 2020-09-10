@@ -57,7 +57,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/restaurant2.html"));
   });
 
-  app.get("/finalmatch", isAuthenticated, (req, res) => {
+  app.get("/finalmatch1", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/finalmatch1.html"));
   });
 

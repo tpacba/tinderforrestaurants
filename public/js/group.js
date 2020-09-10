@@ -32,7 +32,8 @@ $.post("/api/group", groupData).then(data=> {
     console.log(data.price)
     alert("worked! redirecting now! Your group code is " + `${data.code}`)
     populateCode.text(`${data.code}`)
-    setTimeout(()=> window.location.replace(`/results/${data.code}`), 3000)
+    $("#start-button").click(()=> window.location.replace(`/results/${data.code}`));
+    // setTimeout(()=> window.location.replace(`/results/${data.code}`), 3000)
 })
 
 console.log(groupData.city)
@@ -53,8 +54,8 @@ joinGroup.on("click", function(event) {
     $.post("/api/group", groupCode).then(data=> {
         alert("worked! redirecting now!")
 
-        $("start-button").click(()=> window.location.replace(`/results/${data.code}`));
-        // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+        // $(".start-button").click(()=> window.location.replace(`/results/${data.code}`));
+        setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
     })
 
 })
