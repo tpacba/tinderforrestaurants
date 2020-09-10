@@ -69,8 +69,6 @@ joinGroup.on("click", function(event) {
 
     $.post("/api/group", groupCode).then(data=> {
         alert("worked! redirecting now!")
-
-
         setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
     })
 

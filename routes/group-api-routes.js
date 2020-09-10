@@ -34,46 +34,50 @@ module.exports = function (app) {
 
 
   app.post("/api/group", function (req, res) {
-    db.Group.create({ ...req.body, email: req.user.email, UserId: req.user.id }).then(function (dbGroup) {
 
-      const apiKey = process.env.apikey;
+    console.log(req.body);
+    res.json(req.body);
 
+    // db.Group.create({ ...req.body, email: req.user.email, UserId: req.user.id }).then(function (dbGroup) {
 
-      var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=30&location=" + req.body.city + "&locale=it_IT&categories=" + req.body.category + "&price=" + req.body.price + "&term=restaurant";
-
-      // var longitude = "";
-
-      // var lattitude = "";
-
-      // var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=10&latitude=" + latitude + "&longitude=" + longitude + "&locale=it_IT&categories=" + category + "&term=restaurant";
+    //   const apiKey = process.env.apikey;
 
 
-      axios.get(queryURL, {
-        headers: {
-          "Authorization": `Bearer ${process.env.apikey}`,
-          "Content-Type": 'application/x-www-form-urlencoded',
-          "X-Requested-With": "XMLHttpRequest"
-        }
-      })
-        .then(async function ({data:{businesses}}) {
+    //   var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=30&location=" + req.body.city + "&locale=it_IT&categories=" + req.body.category + "&price=" + req.body.price + "&term=restaurant";
 
-          console.log(businesses[0]);
+    //   // var longitude = "";
 
-          for (var i = 0; i < businesses.length; i++) {
-           await db.Results.create({
-              restaurant: businesses[i].name,
-              image: businesses[i].image_url,
-              price: businesses[i].price || "$",
-              matches: false,
-              GroupId: dbGroup.id,
-              group:dbGroup.email
-            })
-          }
+    //   // var lattitude = "";
 
-          res.json(dbGroup);
-        });
+    //   // var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=10&latitude=" + latitude + "&longitude=" + longitude + "&locale=it_IT&categories=" + category + "&term=restaurant";
 
-    })
+
+    //   axios.get(queryURL, {
+    //     headers: {
+    //       "Authorization": `Bearer ${process.env.apikey}`,
+    //       "Content-Type": 'application/x-www-form-urlencoded',
+    //       "X-Requested-With": "XMLHttpRequest"
+    //     }
+    //   })
+    //     .then(async function ({data:{businesses}}) {
+
+    //       console.log(businesses[0]);
+
+    //       for (var i = 0; i < businesses.length; i++) {
+    //        await db.Results.create({
+    //           restaurant: businesses[i].name,
+    //           image: businesses[i].image_url,
+    //           price: businesses[i].price || "$",
+    //           matches: false,
+    //           GroupId: dbGroup.id,
+    //           group:dbGroup.email
+    //         })
+    //       }
+
+    //       res.json(dbGroup);
+    //     });
+
+    // })
   })
 
 app.delete("/api/group/:id", function (req, res) {
