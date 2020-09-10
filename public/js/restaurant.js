@@ -91,10 +91,6 @@ $(document).ready(()=> {
 
         // })
 
-        
-
-
-      
     //     <div class="carousel-item">
     //     <div class="container" style="width: fit-content;">
     //         <div class="card">
@@ -128,7 +124,7 @@ $(document).ready(()=> {
             
         })
         .then(function() {
-            //   console.log(match)
+              console.log("deleted!")
         });
         $('.carousel').carousel('next')
     })
@@ -148,11 +144,19 @@ $(document).ready(()=> {
                     }
                   })
                     .then(function() {
-                    //   console.log(match)
+                      console.log("Added to liked restaurants!")
                     });
-    
-    
                     $('.carousel').carousel('next')
+
+                    if (id > 9) {
+                        $.get("/api/results").then(data=> {
+                            alert("worked! redirecting now! Waiting on other user")
+                            // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+                            //need to update
+                        })
+
+                    }
+
             })
 
 
