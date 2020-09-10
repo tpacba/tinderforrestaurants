@@ -126,6 +126,14 @@ $(document).ready(()=> {
             console.log("deleted!")
         });
         $('.carousel').carousel('next')
+        if (id > 9) {
+            $.get("/api/results").then(data=> {
+                alert("worked! redirecting now! Waiting on other user")
+                setTimeout(()=> window.location.replace("/restaurant2"), 1000)
+                // need to update
+
+            })
+        }
     })
             $(document).on("click", "#check-1", function(event) {
                 event.preventDefault();
@@ -154,26 +162,6 @@ $(document).ready(()=> {
                             // need to update
 
 
-                            // $(document).ready(function(){ 
-                            //     jQuery.ajax({ 
-                            //         type: "GET", 
-                            //         url: "/api/results", 
-                            //         dataType:"json", 
-                            //         success:function(response){ 
-                            //             console.log(response)
-                            //             if (response.redirect) {
-                            //                 window.location.href = response.redirect;
-                            //             }
-                            //             else {
-                            //                 console.log("we will send you to a different page")
-                            //             }
-                            //         }, 
-                            //      error: function(xhr, textStatus, errorThrown) { 
-                            //             alert('Error!  Status = ' + xhr.status); 
-                            //          } 
-                            
-                            //     }); 
-                            // }); 
 
 
                         })
