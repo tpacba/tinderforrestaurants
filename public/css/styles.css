@@ -225,7 +225,7 @@ footer {
     background-position: center;
 }
 
-.choose-heading {
+.choose-heading, #matchTitle {
     font-family: Gothic A1;
 font-style: normal;
 font-weight: 800;
@@ -267,3 +267,4 @@ line-height: 25px;
         width: 264px;
     }
 }
+
