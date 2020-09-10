@@ -16,7 +16,8 @@ $(document).ready(()=> {
             } else {
                 active = "";
             }
-        $(".carousel-inner").append(` <div class="carousel-item ${active}">
+        $(".carousel-inner").append(
+            `<div class="carousel-item ${active}">
                 <div class="container" style="width: fit-content;">
                     <div class="card">
                         <img id="restaurant-1-image" src="${rest.image}" class="card-img-top">
@@ -26,18 +27,16 @@ $(document).ready(()=> {
                         </div>
                     </div>
                 </div>
-            
-            
-            <div class="row">
-        <div class="col-6">
-            <a href="#" id="check-1" data-id="${rest.id}"><img class="marks" src="/css/assets/exmark.png"></a>
-        </div>
-        <div class="col-6">
-            <a href="#" id="ex-1" data-id="${rest.id}"><img class="marks" src="/css/assets/checkmark.png"></a>
-        </div>
-    </div>
-    </div>`);
-
+                <div class="row">
+                    <div class="col-6">
+                        <a href="#" id="ex-1" data-id="${rest.id}"><img class="marks" src="/css/assets/exmark.png"></a>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" id="check-1" data-id="${rest.id}"><img class="marks" src="/css/assets/checkmark.png"></a>
+                    </div>
+                </div>
+            </div>`
+        );
             count++
         })
 
@@ -56,7 +55,7 @@ $(document).ready(()=> {
             // $img.attr("src", rest.image);
             // $restaurantName.append(rest.restaurant);
             // $price.append(rest.price)
-           
+
             // $carouselItem.append($carouselContainer);
             // $carouselContainer.append($cardContainer);
             // $cardContainer.append($img);
@@ -107,12 +106,11 @@ $(document).ready(()=> {
     //         </div>
     //     </div>
     // </div>
-      
     })
     
     $('.carousel').carousel('pause');
 
-    $(document).on("click", "#check-1", function(event) {
+    $(document).on("click", "#ex-1", function(event) {
         event.preventDefault();
         event.stopPropagation();
         
@@ -125,11 +123,11 @@ $(document).ready(()=> {
             
         })
         .then(function() {
-              console.log("deleted!")
+            console.log("deleted!")
         });
         $('.carousel').carousel('next')
     })
-            $(document).on("click", "#ex-1", function(event) {
+            $(document).on("click", "#check-1", function(event) {
                 event.preventDefault();
                 event.stopPropagation();
     
@@ -143,9 +141,9 @@ $(document).ready(()=> {
                     data: {
                         matches: true
                     }
-                  })
+                })
                     .then(function() {
-                      console.log("Added to liked restaurants!")
+                        console.log("Added to liked restaurants!")
                     });
                     $('.carousel').carousel('next')
 
@@ -190,18 +188,5 @@ $(document).ready(()=> {
                     }
 
             })
-
-
-
-    
-    // $('.carousel').carousel('pause');
-    // $("#check-1").click(function() {
-    //     $('.carousel').carousel('next')
-    // })
-    // $("#ex-1").click(function() {
-    //     $('.carousel').carousel('next')
-    // })
-
-    // console.log("hello")
 })
 
