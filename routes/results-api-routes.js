@@ -57,5 +57,24 @@ module.exports = function(app) {
 
           })
 
-})}
+})
+
+app.get("/api/finalmatch/", function (req, res) {
+
+  db.Results.findAll({
+    //   where: query,
+    where: {
+      matches: true
+    },
+
+      include: [db.Group]
+    }).then(function(dbResults) {
+      res.json(dbResults);
+
+    })
+
+})
+
+
+}
 

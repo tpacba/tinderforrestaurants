@@ -39,7 +39,7 @@ module.exports = function (app) {
       const apiKey = process.env.apikey;
 
 
-      var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=30&location=" + req.body.city + "&locale=it_IT&categories=" + req.body.category + "&term=restaurant";
+      var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=30&location=" + req.body.city + "&locale=it_IT&categories=" + req.body.category + "&price=" + req.body.price + "&term=restaurant";
 
       // var longitude = "";
 
