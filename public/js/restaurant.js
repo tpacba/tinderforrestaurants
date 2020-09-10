@@ -5,7 +5,7 @@ $(document).ready(()=> {
     $.get(`/api/results/${code}`)
     .then(data => {
         //put data in carousel or something...
-
+        
         console.log(data[0])
         let count = 0;
         let active = "";
