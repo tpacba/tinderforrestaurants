@@ -151,9 +151,40 @@ $(document).ready(()=> {
                     if (id > 9) {
                         $.get("/api/results").then(data=> {
                             alert("worked! redirecting now! Waiting on other user")
-                            // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
-                            //need to update
+                            setTimeout(()=> window.location.replace("/restaurant2"), 1000)
+                            // need to update
+
+
+                            // $(document).ready(function(){ 
+                            //     jQuery.ajax({ 
+                            //         type: "GET", 
+                            //         url: "/api/results", 
+                            //         dataType:"json", 
+                            //         success:function(response){ 
+                            //             console.log(response)
+                            //             if (response.redirect) {
+                            //                 window.location.href = response.redirect;
+                            //             }
+                            //             else {
+                            //                 console.log("we will send you to a different page")
+                            //             }
+                            //         }, 
+                            //      error: function(xhr, textStatus, errorThrown) { 
+                            //             alert('Error!  Status = ' + xhr.status); 
+                            //          } 
+                            
+                            //     }); 
+                            // }); 
+
+
                         })
+
+                    // } else if (id < 2) {
+                    //     $.get("/api/results/final").then(data=> {
+                    //         alert("worked! redirecting now! Waiting on other user")
+                    //         // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+                    //         //need to update
+                    //     })
 
                     }
 
