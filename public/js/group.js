@@ -1,103 +1,55 @@
 $(document).ready(() => {
+    const createGroup = $(".group-submit");
 
-const createGroup = $(".group-submit");
+    const citySearch = $(".city-search");
 
-const citySearch = $(".city-search");
+    const categorySearch = $(".category-search");
 
-const priceSearch = $(".price-search");
+    const joinGroup = $("#join-group");
 
-const categorySearch = $(".category-search");
+    const populateCode = $(".member-one");
 
-const joinGroup = $("#join-group");
+    // On click for submit button in creategroup.html
+    createGroup.on("click", event => {
+        event.preventDefault();
+        event.stopPropagation();
 
-const populateCode = $(".member-one");
+        // Create groupData with keys 'city', 'category', 'price' and randomly generated Group 'code'
+        const groupData = {
+            city: citySearch.val().trim(),
+            category: categorySearch.val().trim(),
+            price: $("#priceOptions").val(),
+            code: ~~(Math.random()*9000) + 1000
+        }
 
-// let cityVal = citySearch.val();
+        // POST request to send groupData through Yelp api
+        $.post("/api/group", groupData).then(data=> {
+            alert("worked! redirecting now! Your group code is " + `${data.code}`)
 
-function priceOptions() {
-    
-    // if ($("#priceOptions").val() === "1"){
-    //     return "1"
-    // } else if ($("#priceOptions").val() === "2"){
-    //     return "2"
-    // } else if ($("#priceOptions").val() === "3"){
-    //     return "3"
-    // }
-}
-// document.getElementById("priceOptions").value;
-    
-// let priceVal = priceSearch.val();
-
-// let categoryVal = categorySearch.val();
-
-
-createGroup.on("click", event => {
-
-    event.preventDefault();
-    event.stopPropagation();
-    const groupData = {
-        city: citySearch.val().trim(),
-        category: categorySearch.val().trim(),
-        price: $("#priceOptions").val(),
-        code: ~~(Math.random()*9000) + 1000
-    }
-
-
-    $.post("/api/group", groupData).then(data=> {
-        console.log(data.price)
-        alert("worked! redirecting now! Your group code is " + `${data.code}`)
-        populateCode.text(`${data.code}`)
-
-        $("#create-group-code").css("display", "block");
-
-        $("#start-button").click(()=> window.location.replace(`/results/${data.code}`));
-        // setTimeout(()=> window.location.replace(`/results/${data.code}`), 3000)
+            // Shows user randomly generated Group code with start-button to begin choosing restaurants
+            populateCode.text(`${data.code}`)
+            $("#create-group-code").css("display", "block");
+            $("#start-button").click(()=> window.location.replace(`/results/${data.code}`));
+        })
     })
 
-    console.log(groupData.city, groupData.code)
+    // On click for submit button in joingroup.html
+    joinGroup.on("click", function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Create fake groupData with user-inputted group code (values aren't relevant for but the object needs to be populated)
+        const groupData = {
+            city: "Los Angeles",
+            price: "1",
+            category: "tacos",
+            code: $("#group-code").val()
+        }
+
+        // POST request to send groupData then redirect user to begin choosing restaurant
+        $.post("/api/group", groupData).then(data=> {
+            alert("worked! redirecting now!")
+            setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+        })
+    }) 
 })
-
-
-//need to update so the other user gets only options that were matched on
-joinGroup.on("click", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    const groupCode = {
-        city: "Los Angeles",
-        price: "1",
-        category: "tacos",
-        code: $("#group-code").val()
-    }
-
-    $.post("/api/group", groupCode).then(data=> {
-        alert("worked! redirecting now!")
-
-
-        setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
-    })
-    
-    
-
-}) 
-
-})
-
-
-
-
-
-
-// for (var i = 0; i < 3; i++) {
-
-        //     var img = $('<img />', { 
-        //         id: 'Myid',
-        //         src: response.businesses[i].image_url,
-        //         alt: 'MyAlt'
-        //       });
-        //       img.appendTo($('.imageurl'));
-
-        //     $(".restaurant").append(response.businesses[i].name)
-            
-        //     // $(".imageurl").createElement(`<img src="response.businesses[0].image_url">`)
-        //     $(".price").append(response.businesses[i].price)
-        //     }

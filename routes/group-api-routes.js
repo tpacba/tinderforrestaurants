@@ -36,17 +36,7 @@ module.exports = function (app) {
   app.post("/api/group", function (req, res) {
     db.Group.create({ ...req.body, email: req.user.email, UserId: req.user.id }).then(function (dbGroup) {
 
-      const apiKey = process.env.apikey;
-
-
       var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=30&location=" + req.body.city + "&locale=it_IT&categories=" + req.body.category + "&price=" + req.body.price + "&term=restaurant";
-
-      // var longitude = "";
-
-      // var lattitude = "";
-
-      // var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=10&latitude=" + latitude + "&longitude=" + longitude + "&locale=it_IT&categories=" + category + "&term=restaurant";
-
 
       axios.get(queryURL, {
         headers: {
@@ -60,10 +50,12 @@ module.exports = function (app) {
           console.log(businesses[0]);
 
           for (var i = 0; i < businesses.length; i++) {
-           await db.Results.create({
+            await db.Results.create({
               restaurant: businesses[i].name,
               image: businesses[i].image_url,
               price: businesses[i].price || "$",
+              rating: businesses[i].rating,
+              url: businesses[i].url,
               matches: false,
               GroupId: dbGroup.id,
               group:dbGroup.email

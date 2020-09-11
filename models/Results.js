@@ -38,10 +38,22 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.BOOLEAN,
           allowNull: true,
           len: [1]
+      },
+
+      rating: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        len:[1]
+      },
+
+      url: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        len:[1]
       }
     });
     
-   Results.associate = function(models) {
+  Results.associate = function(models) {
       // We're saying that a user should belong to a group
       // A Post can't be created without an Author due to the foreign key constraint
       Results.belongsTo(models.Group, {
