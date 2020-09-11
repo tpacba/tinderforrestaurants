@@ -1,4 +1,6 @@
 $(document).ready(() => {
+    var hits = 0;
+
     // Grab the four-digit code from the web address
     const code = window.location.href.split("/results/").slice(-1)[0];
 
@@ -43,8 +45,7 @@ $(document).ready(() => {
                     </div>
                 </div>`
                 );
-
-                count++
+                count++;
             })
         })
         .then(() => $('.carousel').carousel('pause'))
@@ -53,6 +54,9 @@ $(document).ready(() => {
     $(document).on("click", "#ex-1", function (event) {
         event.preventDefault();
         event.stopPropagation();
+
+        hits++;
+        console.log(hits);
 
         // Grab the restaurant.id
         let id = $(this).data("id");
@@ -71,7 +75,7 @@ $(document).ready(() => {
         $('.carousel').carousel('next')
 
         // Redirect to restaurant2.html after 10 results for second round of choosing
-        if (id > 9) {
+        if (hits > 9) {
             $.get("/api/results").then(data => {
                 alert("worked! redirecting now! Waiting on other user")
                 setTimeout(() => window.location.replace("/restaurant2"), 1000)
@@ -83,6 +87,9 @@ $(document).ready(() => {
     $(document).on("click", "#check-1", function (event) {
         event.preventDefault();
         event.stopPropagation();
+
+        hits++;
+        console.log(hits);
 
         // Grab the restaurant.id
         let id = $(this).data("id");
@@ -104,7 +111,7 @@ $(document).ready(() => {
         $('.carousel').carousel('next')
 
         // Redirect to restaurant2.html after 10 results for second round of choosing
-        if (id > 9) {
+        if (hits > 9) {
             $.get("/api/results").then(data => {
                 alert("worked! redirecting now! Waiting on other user")
                 setTimeout(() => window.location.replace("/restaurant2"), 1000)

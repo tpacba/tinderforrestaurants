@@ -38,10 +38,10 @@ $(document).ready(() => {
                         </div>
                         <div class="row" id="swipe-buttons">
                             <div class="col-6">
-                                <a href="#" id="check-1" data-id="${restaurant.id}"><img class="marks" src="/css/assets/exmark.png"></a>
+                                <a href="#" id="ex-1" data-id="${restaurant.id}"><img class="marks" src="/css/assets/exmark.png"></a>
                             </div>
                             <div class="col-6">
-                                <a href="#" id="ex-1" data-id="${restaurant.id}"><img class="marks" src="/css/assets/checkmark.png"></a>
+                                <a href="#" id="check-1" data-id="${restaurant.id}"><img class="marks" src="/css/assets/checkmark.png"></a>
                             </div>
                         </div>
                     </div>`
@@ -53,7 +53,7 @@ $(document).ready(() => {
         .then(() => $('.carousel').carousel('pause'))
 
     // On click for the ex-button
-    $(document).on("click", "#check-1", function (event) {
+    $(document).on("click", "#ex-1", function (event) {
         event.preventDefault();
         event.stopPropagation();
 
@@ -69,7 +69,7 @@ $(document).ready(() => {
         .then(function () {
             console.log("deleted!")
 
-            // GET request to grab data from finalresults api and update finalResults variable
+            // GET request to grab data from finalresults api and update finalResults variable to measure length array
             $.get("/api/finalresults/").then(data => {
                 console.log("GET request to grab data from /api/finalresults and update finalResults variable")
                 console.log(data);
@@ -88,7 +88,7 @@ $(document).ready(() => {
     })
 
     // On click for the ex-button
-    $(document).on("click", "#ex-1", function (event) {
+    $(document).on("click", "#check-1", function (event) {
         event.preventDefault();
         event.stopPropagation();
 
@@ -107,7 +107,7 @@ $(document).ready(() => {
         .then(function () {
             console.log("Added to liked restaurants!")
 
-            // GET request to grab data from finalresults api and update finalResults variable
+            // GET request to grab data from finalresults api and update finalResults variable to measure length array
             $.get("/api/finalresults/").then(data => {
                 console.log("GET request to grab data from /api/finalresults and update finalResults variable")
                 console.log(data);
