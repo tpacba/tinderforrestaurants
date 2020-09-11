@@ -64,6 +64,8 @@ joinGroup.on("click", function(event) {
     event.stopPropagation();
     const groupCode = {
         city: "Los Angeles",
+        price: "1",
+        category: "tacos",
         code: $("#group-code").val()
     }
 
@@ -73,9 +75,10 @@ joinGroup.on("click", function(event) {
 
         setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
     })
+    
+    
 
-})
-
+}) 
 
 })
 

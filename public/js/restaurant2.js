@@ -7,7 +7,7 @@ $(document).ready(() => {
         console.log(data)
         finalResults = data;
 
-        console.log(data[0])
+        // console.log(data[0])
         let count = 0;
         let active = "";
         data.forEach(rest => {
@@ -27,7 +27,7 @@ $(document).ready(() => {
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" id="swipe-buttons">
                         <div class="col-6">
                             <a href="#" id="check-1" data-id="${rest.id}"><img class="marks" src="/css/assets/exmark.png"></a>
                         </div>
@@ -64,6 +64,9 @@ $(document).ready(() => {
                             alert("worked! redirecting now! Waiting on other user")
                             setTimeout(() => window.location.replace("/finalmatch1"), 1000)
 
+                            console.log(data)
+
+
                         })
                     }
                 })
@@ -95,6 +98,11 @@ $(document).ready(() => {
                         $.get("/api/results").then(data => {
                             alert("worked! redirecting now! Waiting on other user")
                             setTimeout(() => window.location.replace("/finalmatch1"), 1000)
+
+                            $("#swipe-buttons").css("display", "none")
+                            
+
+
 
                         })
                     }
