@@ -54,8 +54,7 @@ module.exports = function (app) {
           "Content-Type": 'application/x-www-form-urlencoded',
           "X-Requested-With": "XMLHttpRequest"
         }
-      })
-        .then(async function ({data:{businesses}}) {
+      }).then(async function ({data:{businesses}}) {
 
           console.log(businesses[0]);
 
