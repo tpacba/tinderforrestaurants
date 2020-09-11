@@ -35,6 +35,7 @@ $(document).ready(() => {
                                     <p class="restaurant-name"><span id="restaurant-1-name">${restaurant.restaurant}</span></p>
                                     <p class="rating">Rating: ${restaurant.rating}/5</p>
                                     <p class="price"><span id="restaurant-1-price">${restaurant.price}</span></p>
+                                    <a class="btn btn-light" href="${restaurant.url}" target="_blank">More Info</a>
                                 </div>
                             </div>
                         </div>
