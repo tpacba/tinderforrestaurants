@@ -1,4 +1,6 @@
 $(document).ready(() => {
+    $('.carousel').carousel('pause');
+
     var hits = 0;
 
     // Grab the four-digit code from the web address
@@ -32,6 +34,7 @@ $(document).ready(() => {
                                 <p class="restaurant-name"><span id="restaurant-1-name">${restaurant.restaurant}</span></p>
                                 <p class="rating">Rating: ${restaurant.rating}/5</p>
                                 <p class="price"><span id="restaurant-1-price">${restaurant.price}</span></p>
+                                <a class="btn btn-light" href="${restaurant.url}" target="_blank">More Info</a>
                             </div>
                         </div>
                     </div>
@@ -52,6 +55,8 @@ $(document).ready(() => {
 
     // On click for the ex-button
     $(document).on("click", "#ex-1", function (event) {
+        $('.carousel').carousel('pause');
+
         event.preventDefault();
         event.stopPropagation();
 
@@ -60,7 +65,7 @@ $(document).ready(() => {
 
         // Grab the restaurant.id
         let id = $(this).data("id");
-        console.log(id)
+        console.log(id);
 
         // DELETE request for the specific restaurant.id
         $.ajax({
@@ -68,11 +73,11 @@ $(document).ready(() => {
             url: `/api/results/` + id,
         })
             .then(function () {
-                console.log("deleted!")
+                console.log("deleted!");
             });
 
         // Move to next item
-        $('.carousel').carousel('next')
+        $('.carousel').carousel('next');
 
         // Redirect to restaurant2.html after 10 results for second round of choosing
         if (hits > 9) {
@@ -85,6 +90,8 @@ $(document).ready(() => {
 
     // On click for the check-button
     $(document).on("click", "#check-1", function (event) {
+        $('.carousel').carousel('pause');
+
         event.preventDefault();
         event.stopPropagation();
 
@@ -104,11 +111,11 @@ $(document).ready(() => {
             }
         })
         .then(function () {
-            console.log("Added to liked restaurants!")
+            console.log("Added to liked restaurants!");
         });
         
         // Move to next item
-        $('.carousel').carousel('next')
+        $('.carousel').carousel('next');
 
         // Redirect to restaurant2.html after 10 results for second round of choosing
         if (hits > 9) {

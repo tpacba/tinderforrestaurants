@@ -1,4 +1,6 @@
 $(document).ready(() => {
+    $('.carousel').carousel('pause');
+
     var finalResults = [];
 
     // GET request from the finalresults
@@ -54,6 +56,8 @@ $(document).ready(() => {
 
     // On click for the ex-button
     $(document).on("click", "#ex-1", function (event) {
+        $('.carousel').carousel('pause');
+
         event.preventDefault();
         event.stopPropagation();
 
@@ -89,6 +93,8 @@ $(document).ready(() => {
 
     // On click for the ex-button
     $(document).on("click", "#check-1", function (event) {
+        $('.carousel').carousel('pause');
+
         event.preventDefault();
         event.stopPropagation();
 
@@ -105,7 +111,7 @@ $(document).ready(() => {
             }
         })
         .then(function () {
-            console.log("Added to liked restaurants!")
+            console.log("Added to liked restaurants!");
 
             // GET request to grab data from finalresults api and update finalResults variable to measure length array
             $.get("/api/finalresults/").then(data => {
@@ -125,7 +131,7 @@ $(document).ready(() => {
         });
 
         // Move to next item
-        $('.carousel').carousel('next')
+        $('.carousel').carousel('next');
 
         // if (finalResults.length < 2) {
         //     $.get("/api/finalmatch/").then(data => {
