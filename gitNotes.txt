@@ -17,3 +17,7 @@
     git push origin --delete
 
     cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json
+
+Welcome to Music eXchange! Please explore the different user profiles to see what content each user has created!
+
+In each profile you can make a request to purchase a song, or to purchase a tutorial from the user!
