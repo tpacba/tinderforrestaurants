@@ -14,6 +14,8 @@ Nick Guimarais, Tristan Pacba, David Oyeyemi, Aileen Wang
 
 * [Deployment](#deployment)
 
+* [Screenshots](#screenshots)
+
 
 
 ## User-Story
