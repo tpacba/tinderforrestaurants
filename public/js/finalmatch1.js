@@ -1,9 +1,17 @@
 $(document).ready(() => {
     
     // Append the final results within finalmatch1.html 
-    $.get("/api/finalresults/")
+
+    $.get("/api/group").then(data => {
+        console.log(data)
+        let group = data.pop();
+        let groupid = group.id;
+        console.log(groupid)
+
+
+    $.get("/api/finalmatch/" + groupid)
         .then(data => {
-            console.log("GET request from /api/finalresults");
+            console.log("GET request from /api/finalmatch");
             console.log(data);
 
             // Loop through the restaurant results
@@ -26,4 +34,7 @@ $(document).ready(() => {
                 `);
             })
         })
+
+    })
 })
+

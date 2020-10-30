@@ -58,7 +58,7 @@ $(document).ready(() => {
            //     // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
                 setTimeout(()=> window.location.replace(`/restaurant2`), 1000)
                } else {
-                   alert("Incorrect group code, please try again!")
+                   console.log("Incorrect code")
                }
             }
 
