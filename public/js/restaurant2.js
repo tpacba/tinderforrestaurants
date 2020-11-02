@@ -3,8 +3,17 @@ $(document).ready(() => {
 
     var finalResults = [];
 
+    $.get("/api/group").then(data => {
+        console.log(data)
+        let group = data.pop();
+        let groupid = group.id;
+        console.log(groupid)
+        // let code2 = data.length -1 + id
+        // console.log(code2)
+    // })
+
     // GET request from the finalresults
-    $.get("/api/finalresults/")
+    $.get("/api/finalresults/" + groupid)
         .then(data => {
             console.log("GET request from /api/finalresults");
             console.log(data);
@@ -55,6 +64,8 @@ $(document).ready(() => {
         })
         .then(() => $('.carousel').carousel('pause'))
 
+    
+
     // On click for the ex-button
     $(document).on("click", "#ex-1", function (event) {
         $('.carousel').carousel('pause');
@@ -75,14 +86,15 @@ $(document).ready(() => {
             console.log("deleted!")
 
             // GET request to grab data from finalresults api and update finalResults variable to measure length array
-            $.get("/api/finalresults/").then(data => {
+            $.get("/api/finalresults/" + groupid).then(data => {
                 console.log("GET request to grab data from /api/finalresults and update finalResults variable")
                 console.log(data);
                 finalResults = data;
 
                 // GET request to redirect to finalmatch1.html when down to last restaurant
                 if (finalResults.length < 2) {
-                    $.get("/api/results").then(data => {
+                    $.get("/api/finalresults/" + groupid).then(data => {
+                        console.log(data)
                         alert("worked! redirecting now! Waiting on other user")
                         setTimeout(() => window.location.replace("/finalmatch1"), 1000)
                     })
@@ -115,14 +127,14 @@ $(document).ready(() => {
             console.log("Added to liked restaurants!");
 
             // GET request to grab data from finalresults api and update finalResults variable to measure length array
-            $.get("/api/finalresults/").then(data => {
+            $.get("/api/finalresults/" + groupid).then(data => {
                 console.log("GET request to grab data from /api/finalresults and update finalResults variable")
                 console.log(data);
                 finalResults = data;
 
                 // GET request to redirect to finalmatch1.html when down to last restaurant
                 if (finalResults.length < 2) {
-                    $.get("/api/results").then(data => {
+                    $.get("/api/finalresults/" + groupid).then(data => {
                         alert("Redirecting now! Waiting on other user!")
                         setTimeout(() => window.location.replace("/finalmatch1"), 1000)
                         // $("#swipe-buttons").css("display", "none")
@@ -173,4 +185,6 @@ $(document).ready(() => {
         //         })
         // }
     })
+    })
+
 })

@@ -43,12 +43,13 @@ module.exports = function(app) {
       });
 
       //post for rendering narrowed down results - recently added - Nick
-      app.get("/api/finalresults/", function (req, res) {
+      app.get("/api/finalresults/:groupid", function (req, res) {
 
         db.Results.findAll({
           //   where: query,
           where: {
-            matches: true
+            matches: true,
+            groupid: req.params.groupid
           },
 
             include: [db.Group]
@@ -59,12 +60,13 @@ module.exports = function(app) {
 
 })
 
-app.get("/api/finalmatch/", function (req, res) {
+app.get("/api/finalmatch/:groupid", function (req, res) {
 
   db.Results.findAll({
     //   where: query,
     where: {
-      matches: true
+      matches: true,
+      groupid: req.params.groupid
     },
 
       include: [db.Group]

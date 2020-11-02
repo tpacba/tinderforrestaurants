@@ -45,11 +45,40 @@ $(document).ready(() => {
             category: "tacos",
             code: $("#group-code").val()
         }
-
+        groupValidate()
         // POST request to send groupData then redirect user to begin choosing restaurant
-        $.post("/api/group", groupData).then(data=> {
-            alert("worked! redirecting now!")
-            setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+        console.log(groupData.code)
+        async function groupValidate() {
+       await $.get("/api/group").then(data=> {
+             console.log(data[0].code)
+            
+            for (var i = 0; i < data.length; i++) {
+                if (groupData.code == data[i].code) {
+                    alert("worked! redirecting now!")
+           //     // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+                setTimeout(()=> window.location.replace(`/restaurant2`), 1000)
+               } else {
+                   console.log("Incorrect code")
+               }
+            }
+
+
+
+    //          if (groupData.code == data[0].code) {
+    //             alert("worked! redirecting now!")
+    //    //     // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+    //         setTimeout(()=> window.location.replace(`/restaurant2`), 1000)
+    //        } else {
+    //            alert("Incorrect group code, please try again!")
+    //        }
         })
+
+        
+
+        // alert("worked! redirecting now!")
+        //     // setTimeout(()=> window.location.replace(`/results/${data.code}`), 1000)
+        //     setTimeout(()=> window.location.replace(`/restaurant2`), 1000)
+    }
     }) 
 })
+

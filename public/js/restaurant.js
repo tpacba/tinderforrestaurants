@@ -82,8 +82,8 @@ $(document).ready(() => {
         // Redirect to restaurant2.html after 10 results for second round of choosing
         if (hits > 9) {
             $.get("/api/results").then(data => {
-                alert("worked! redirecting now! Waiting on other user")
-                setTimeout(() => window.location.replace("/restaurant2"), 1000)
+                alert("Notify the other user it is their turn and provide them with your group code: " + code + "!" + " " +"Rejoin the group when your turn is up!")
+                setTimeout(() => window.location.replace(`/`), 1000)
             })
         }
     })
@@ -120,8 +120,8 @@ $(document).ready(() => {
         // Redirect to restaurant2.html after 10 results for second round of choosing
         if (hits > 9) {
             $.get("/api/results").then(data => {
-                alert("worked! redirecting now! Waiting on other user")
-                setTimeout(() => window.location.replace("/restaurant2"), 1000)
+                alert("Notify the other user it is their turn and provide them with your group code: " + code + "!" + " " +"Rejoin the group when your turn is up!")
+                setTimeout(() => window.location.replace(`/`), 1000)
             })
         }
     })
