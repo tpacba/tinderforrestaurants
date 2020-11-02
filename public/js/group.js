@@ -17,13 +17,14 @@ $(document).ready(() => {
         // Create groupData with keys 'city', 'category', 'price' and randomly generated Group 'code'
         const groupData = {
             city: citySearch.val().trim(),
-            category: categorySearch.val().trim(),
+            category: categorySearch.val().trim().toLowerCase(),
             price: $("#priceOptions").val(),
             code: ~~(Math.random()*9000) + 1000
         }
 
         // POST request to send groupData through Yelp api
         $.post("/api/group", groupData).then(data=> {
+            console.log(groupData.category)
             alert("worked! redirecting now! Your group code is " + `${data.code}`)
 
             // Shows user randomly generated Group code with start-button to begin choosing restaurants
