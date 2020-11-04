@@ -28,6 +28,7 @@ $(document).ready(() => {
                                 <p class="rating">Rating: ${restaurant.rating}/5</p>
                                 <p class="price"><span id="restaurant-1-price">${restaurant.price}</span></p>
                                 <button type="button" class="btn btn-danger" onclick="window.location.href='${restaurant.url}';">Check it out on Yelp!</button>
+                                <p style="margin-top: 20px;">Click <a href="/logout">here</a> to try another search</p>
                             </div>
                         </div>
                     </div>
